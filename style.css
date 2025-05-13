@@ -3,7 +3,7 @@ h1 {
     font-family: "Playwrite CU", cursive;
     color: #4d4d4d;
     font-weight: 200;
-    font-size: 24px;
+    font-size: 36px;
     margin-top: 36px;
 }
 
@@ -15,8 +15,8 @@ p {
     margin-top: 5px;
 }
 
-html {
-    background-color: #fedaff;
+body {
+    background-image: linear-gradient(#fedaff, #f8ffda);
     justify-content: center;
 }
 
@@ -45,6 +45,8 @@ html {
 .display {
     width: auto;
     height: 75px;
+    font-family: "Varela Round", sans-serif;
+    font-size: 24px;
     background-color: #4d4d4d;
     margin: 10px; 
     border-radius: 25px;
@@ -58,9 +60,9 @@ html {
 }
 
 .num-blue {
-    background-color: #b6d0ff;
+    background-color: #edf3ff;
     color: #4d4d4d;
-    font-family: "Fredoka", sans-serif;
+    font-family: "Varela Round", sans-serif;
     font-size: 20px;
     border-radius: 30px;
     padding: 25px;
@@ -68,32 +70,46 @@ html {
     border: #4d4d4d solid 1px; 
 }
 
+.num-blue:hover {
+    background-color: #f2f5f7;
+}
+
 .num-pink {
-    background-color: #ffb3ff;
+    background-color: #ffdaff;
     color: #4d4d4d;
-    font-family: "Fredoka", sans-serif;
+    font-family: "Varela Round", sans-serif;
     font-size: 20px;
     border-radius: 30px;
     padding: 25px;
     margin: 5px;
     border: #4d4d4d solid 1px;
+}
+
+
+.num-pink:hover {
+    background-color: #f2f5f7;
 }
 
 .num-purple {
-    background-color: #d197fe;
+    background-color: #e7c7ff;
     color: #4d4d4d;
-    font-family: "Fredoka", sans-serif;
+    font-family: "Varela Round", sans-serif;
     font-size: 20px;
     border-radius: 30px;
     padding: 25px;
     margin: 5px;
     border: #4d4d4d solid 1px;
+}
+
+
+.num-purple:hover {
+    background-color: #f2f5f7;
 }
 
 .num-green {
-    background-color: #a4feaf;
+    background-color: #d3fed8;
     color: #4d4d4d;
-    font-family: "Fredoka", sans-serif;
+    font-family: "Varela Round", sans-serif;
     font-size: 20px;
     border-radius: 30px;
     padding: 25px;
@@ -101,22 +117,24 @@ html {
     border: #4d4d4d solid 1px;
 }
 
+.num-green:hover {
+    background-color: #f2f5f7;
+}
+
 .num-orange {
-    background-color: #ffc587;
+    background-color: #ffe7cd;
     color: #4d4d4d;
-    font-family: "Fredoka", sans-serif;
+    font-family: "Varela Round", sans-serif;
     font-size: 20px;
     border-radius: 30px;
     padding: 25px;
     margin: 5px;
     border: #4d4d4d solid 1px;
+    box-shadow: 2px;
 }
-.num {
-    border: 2px solid red;
-    border-radius: 50px;
-    font-size: 20px;
-    padding: 40px;
-    background-color: lightsalmon
+
+.num-orange:hover {
+    background-color: #f2f5f7;
 }
 
 .num-row {

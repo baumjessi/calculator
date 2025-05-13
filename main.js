@@ -20,18 +20,20 @@ function divide(num1, num2) {
 
 function operate(num1, num2, operator) {
     if (operator === "+") {
-        console.log(add(num1, num2));
+        return add(num1, num2);
     }
     else if (operator === "-") {
-        console.log(subtract(num1, num2));
+        return subtract(num1, num2);
     }
     else if (operator === "*") {
-        console.log(multiply(num1, num2));
+        return multiply(num1, num2);
     }
     else {
-        console.log(divide(num1, num2));
+        return divide(num1, num2);
     }
 }
+
+let display = document.querySelector(".display");
 
 let one = document.getElementById("one");
 one.addEventListener("click", (e) => {
@@ -41,6 +43,7 @@ one.addEventListener("click", (e) => {
     else if (sessionStorage.getItem("num1") !== null && sessionStorage.getItem("num2") == null) {
         sessionStorage.setItem("num2", "1");
     }
+    display.textContent = "1";
 }
 );
 
@@ -53,6 +56,7 @@ two.addEventListener("click", (e) => {
     && sessionStorage.getItem("num2") == null) {
         sessionStorage.setItem("num2", "2");
     }
+     display.textContent = "2";
 }
 );
 
@@ -65,6 +69,7 @@ three.addEventListener("click", (e) => {
     && sessionStorage.getItem("num2") == null) {
         sessionStorage.setItem("num2", "3");
     }
+    display.textContent = "3";
 }
 );
 
@@ -77,6 +82,7 @@ four.addEventListener("click", (e) => {
     && sessionStorage.getItem("num2") == null) {
         sessionStorage.setItem("num2", "4");
     }
+    display.textContent = "4";
 }
 );
 
@@ -89,6 +95,7 @@ five.addEventListener("click", (e) => {
     && sessionStorage.getItem("num2") == null) {
         sessionStorage.setItem("num2", "5");
     }
+    display.textContent = "5";
 }
 );
 
@@ -101,6 +108,7 @@ six.addEventListener("click", (e) => {
     && sessionStorage.getItem("num2") == null) {
         sessionStorage.setItem("num2", "6");
     }
+    display.textContent = "6";
 }
 );
 
@@ -113,6 +121,7 @@ seven.addEventListener("click", (e) => {
     && sessionStorage.getItem("num2") == null) {
         sessionStorage.setItem("num2", "7");
     }
+    display.textContent = "7";
 }
 );
 
@@ -125,6 +134,7 @@ eight.addEventListener("click", (e) => {
     && sessionStorage.getItem("num2") == null) {
         sessionStorage.setItem("num2", "8");
     }
+    display.textContent = "8";
 }
 );
 
@@ -137,6 +147,7 @@ nine.addEventListener("click", (e) => {
     && sessionStorage.getItem("num2") == null) {
         sessionStorage.setItem("num2", "9");
     }
+    display.textContent = "9";
 }
 );
 
@@ -149,6 +160,7 @@ zero.addEventListener("click", (e) => {
     && sessionStorage.getItem("num2") == null) {
         sessionStorage.setItem("num2", "0");
     }
+    display.textContent = "0";
 }
 );
 
@@ -185,6 +197,8 @@ clear.addEventListener("click", (e) => {
     sessionStorage.removeItem("num1");
     sessionStorage.removeItem("num2");
     sessionStorage.removeItem("operator");
+    sessionStorage.removeItem("num3");
+    display.textContent = "";
 }
 );
 
@@ -193,9 +207,23 @@ equal.addEventListener("click", (e) => {
     let num1 = Number(sessionStorage.getItem("num1"));
     let num2 = Number(sessionStorage.getItem("num2"));
     let operator = sessionStorage.getItem("operator");
-    console.log(operate(num1, num2, operator));
+    let solution = `${operate(num1, num2, operator)}`;
     sessionStorage.removeItem("num1");
     sessionStorage.removeItem("num2");
     sessionStorage.removeItem("operator");
+    sessionStorage.removeItem("num3")
+    console.log(solution);
+    display.textContent = `${solution}`;
 }
 );
+
+function concNum() {
+    let num1 = Number(sessionStorage.getItem("num1"));
+    let num2 = Number(sessionStorage.getItem("num2"));
+    let num3 = num1.toString() + num2.toString();
+    Number(num3);
+    sessionStorage.setItem("num3", num3);
+    console.log(num3);
+}
+
+concNum();
