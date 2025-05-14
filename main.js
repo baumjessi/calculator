@@ -37,14 +37,30 @@ let display = document.querySelector(".display");
 
 let one = document.getElementById("one");
 one.addEventListener("click", (e) => {
-    if (sessionStorage.getItem("num1")===null) {
-        sessionStorage.setItem("num1", "1");
+    if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "1");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}1`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
     }
-    else if (sessionStorage.getItem("num1") !== null && sessionStorage.getItem("num2") == null) {
-        sessionStorage.setItem("num2", "1");
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "1");
+            display.textContent = sessionStorage.getItem("num2");
+
     }
-    display.textContent = "1";
-}
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}1`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
 );
 
 let two = document.getElementById("two");
