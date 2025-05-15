@@ -1,3 +1,7 @@
+window.onbeforeunload = function() {
+  sessionStorage.clear();
+};
+
 function add(num1, num2) {
     result = num1 + num2;
     return result;
@@ -65,119 +69,252 @@ one.addEventListener("click", (e) => {
 
 let two = document.getElementById("two");
 two.addEventListener("click", (e) => {
-   if (sessionStorage.getItem("num1")===null) {
-        sessionStorage.setItem("num1", "2");
+ if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "2");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}2`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
     }
-    else if (sessionStorage.getItem("num1") !== null 
-    && sessionStorage.getItem("num2") == null) {
-        sessionStorage.setItem("num2", "2");
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "2");
+            display.textContent = sessionStorage.getItem("num2");
+
     }
-     display.textContent = "2";
-}
-);
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}2`);
+            display.textContent = sessionStorage.getItem("num2");
+    };
+});
 
 let three = document.getElementById("three");
 three.addEventListener("click", (e) => {
-    if (sessionStorage.getItem("num1")===null) {
-        sessionStorage.setItem("num1", "3");
+ if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "3");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}3`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
     }
-    else if (sessionStorage.getItem("num1") !== null 
-    && sessionStorage.getItem("num2") == null) {
-        sessionStorage.setItem("num2", "3");
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "3");
+            display.textContent = sessionStorage.getItem("num2");
+
     }
-    display.textContent = "3";
-}
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}3`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
 );
 
 let four = document.getElementById("four");
 four.addEventListener("click", (e) => {
-    if (sessionStorage.getItem("num1")===null) {
-        sessionStorage.setItem("num1", "4");
+ if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "4");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}4`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
     }
-    else if (sessionStorage.getItem("num1") !== null 
-    && sessionStorage.getItem("num2") == null) {
-        sessionStorage.setItem("num2", "4");
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "4");
+            display.textContent = sessionStorage.getItem("num2");
+
     }
-    display.textContent = "4";
-}
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}4`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
 );
 
 let five = document.getElementById("five");
 five.addEventListener("click", (e) => {
- if (sessionStorage.getItem("num1")===null) {
-        sessionStorage.setItem("num1", "5");
+ if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "5");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}5`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
     }
-    else if (sessionStorage.getItem("num1") !== null 
-    && sessionStorage.getItem("num2") == null) {
-        sessionStorage.setItem("num2", "5");
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "5");
+            display.textContent = sessionStorage.getItem("num2");
+
     }
-    display.textContent = "5";
-}
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}5`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
 );
 
 let six = document.getElementById("six");
 six.addEventListener("click", (e) => {
-   if (sessionStorage.getItem("num1")===null) {
-        sessionStorage.setItem("num1", "6");
+ if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "6");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}6`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
     }
-    else if (sessionStorage.getItem("num1") !== null 
-    && sessionStorage.getItem("num2") == null) {
-        sessionStorage.setItem("num2", "6");
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "6");
+            display.textContent = sessionStorage.getItem("num2");
+
     }
-    display.textContent = "6";
-}
-);
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}6`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+});
 
 let seven = document.getElementById("seven");
 seven.addEventListener("click", (e) => {
-    if (sessionStorage.getItem("num1")===null) {
-        sessionStorage.setItem("num1", "7");
+     if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "7");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}7`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
     }
-    else if (sessionStorage.getItem("num1") !== null 
-    && sessionStorage.getItem("num2") == null) {
-        sessionStorage.setItem("num2", "7");
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "7");
+            display.textContent = sessionStorage.getItem("num2");
+
     }
-    display.textContent = "7";
-}
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}7`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
 );
 
 let eight = document.getElementById("eight");
 eight.addEventListener("click", (e) => {
-  if (sessionStorage.getItem("num1")===null) {
-        sessionStorage.setItem("num1", "8");
+   if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "8");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}8`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
     }
-    else if (sessionStorage.getItem("num1") !== null 
-    && sessionStorage.getItem("num2") == null) {
-        sessionStorage.setItem("num2", "8");
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "8");
+            display.textContent = sessionStorage.getItem("num2");
+
     }
-    display.textContent = "8";
-}
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}8`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
 );
 
 let nine = document.getElementById("nine");
 nine.addEventListener("click", (e) => {
-    if (sessionStorage.getItem("num1")===null) {
-        sessionStorage.setItem("num1", "9");
+     if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "9");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}9`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
     }
-    else if (sessionStorage.getItem("num1") !== null 
-    && sessionStorage.getItem("num2") == null) {
-        sessionStorage.setItem("num2", "9");
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "9");
+            display.textContent = sessionStorage.getItem("num2");
+
     }
-    display.textContent = "9";
-}
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}9`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
 );
 
 let zero = document.getElementById("zero");
 zero.addEventListener("click", (e) => {
-    if (sessionStorage.getItem("num1")===null) {
-        sessionStorage.setItem("num1", "0");
+   if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "0");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}0`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
     }
-    else if (sessionStorage.getItem("num1") !== null 
-    && sessionStorage.getItem("num2") == null) {
-        sessionStorage.setItem("num2", "0");
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "0");
+            display.textContent = sessionStorage.getItem("num2");
+
     }
-    display.textContent = "0";
-}
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}0`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
 );
 
 let plus = document.getElementById("plus");
@@ -213,33 +350,27 @@ clear.addEventListener("click", (e) => {
     sessionStorage.removeItem("num1");
     sessionStorage.removeItem("num2");
     sessionStorage.removeItem("operator");
-    sessionStorage.removeItem("num3");
     display.textContent = "";
 }
 );
 
 let equal = document.getElementById("equal");
 equal.addEventListener("click", (e) => {
-    let num1 = Number(sessionStorage.getItem("num1"));
-    let num2 = Number(sessionStorage.getItem("num2"));
-    let operator = sessionStorage.getItem("operator");
-    let solution = `${operate(num1, num2, operator)}`;
-    sessionStorage.removeItem("num1");
-    sessionStorage.removeItem("num2");
-    sessionStorage.removeItem("operator");
-    sessionStorage.removeItem("num3")
-    console.log(solution);
-    display.textContent = `${solution}`;
+    if (sessionStorage.getItem("num2") === null) {
+        equal.disabled = true;
+    }
+    else {
+        equal.disabled = false;
+        let num1 = Number(sessionStorage.getItem("num1"));
+        let num2 = Number(sessionStorage.getItem("num2"));
+        let operator = sessionStorage.getItem("operator");
+        let solution = `${operate(num1, num2, operator)}`;
+        let roundSolution = Number(solution).toFixed(2);
+        sessionStorage.removeItem("num1");
+        sessionStorage.removeItem("num2");
+        sessionStorage.removeItem("operator");
+        display.textContent = `${roundSolution}`;
+        sessionStorage.setItem("num1", `${roundSolution}`);
+}
 }
 );
-
-function concNum() {
-    let num1 = Number(sessionStorage.getItem("num1"));
-    let num2 = Number(sessionStorage.getItem("num2"));
-    let num3 = num1.toString() + num2.toString();
-    Number(num3);
-    sessionStorage.setItem("num3", num3);
-    console.log(num3);
-}
-
-concNum();

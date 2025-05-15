@@ -15,19 +15,21 @@ p {
     margin-top: 5px;
 }
 
-body {
-    background-image: linear-gradient(#fedaff, #f8ffda);
+html {
+    background-color: #ebe2f2;
     justify-content: center;
+    user-select: none;
+    margin: auto;
 }
 
 .calc-body {
     background-color: #f2f5f7;
     margin: auto;
-    margin-top: -15px;
+    margin-top: -25px;
     width: 300px;
     height: 500px;
     padding: 20px;
-    border: #4d4d4d solid 1px;
+    border: #4d4d4d solid 2px;
     border-radius: 45px;
 }
 
@@ -52,11 +54,19 @@ body {
     border-radius: 25px;
     color: #f2f5f7;
     padding: 10px;
-    text-align: right;
+    text-align: right; 
 }
+
 .num-row {
     display: flex;
-    justify-content: center;;
+    justify-content: center;
+}
+
+.num-blue, 
+.num-pink,
+.num-orange,
+.num-green {
+    border: #4d4d4d solid 2px;
 }
 
 .num-blue {
@@ -67,11 +77,14 @@ body {
     border-radius: 30px;
     padding: 25px;
     margin: 5px;
-    border: #4d4d4d solid 1px; 
 }
 
 .num-blue:hover {
     background-color: #f2f5f7;
+}
+
+.num-blue:active {
+    padding: 20px;
 }
 
 .num-pink {
@@ -82,9 +95,7 @@ body {
     border-radius: 30px;
     padding: 25px;
     margin: 5px;
-    border: #4d4d4d solid 1px;
 }
-
 
 .num-pink:hover {
     background-color: #f2f5f7;
@@ -98,7 +109,6 @@ body {
     border-radius: 30px;
     padding: 25px;
     margin: 5px;
-    border: #4d4d4d solid 1px;
 }
 
 
@@ -114,11 +124,19 @@ body {
     border-radius: 30px;
     padding: 25px;
     margin: 5px;
-    border: #4d4d4d solid 1px;
 }
 
 .num-green:hover {
     background-color: #f2f5f7;
+}
+
+.num-green:active,
+.num-blue:active,
+.num-orange:active,
+.num-purple:active,
+.num-pink:active {
+    padding: 20px;
+    margin: 10px;
 }
 
 .num-orange {
@@ -129,7 +147,6 @@ body {
     border-radius: 30px;
     padding: 25px;
     margin: 5px;
-    border: #4d4d4d solid 1px;
     box-shadow: 2px;
 }
 
