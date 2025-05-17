@@ -359,18 +359,27 @@ equal.addEventListener("click", (e) => {
     if (sessionStorage.getItem("num2") === null) {
         equal.disabled = true;
     }
-    else {
+    else if (sessionStorage.getItem("num2") !== null) {
         equal.disabled = false;
         let num1 = Number(sessionStorage.getItem("num1"));
         let num2 = Number(sessionStorage.getItem("num2"));
         let operator = sessionStorage.getItem("operator");
         let solution = `${operate(num1, num2, operator)}`;
-        let roundSolution = Number(solution).toFixed(2);
-        sessionStorage.removeItem("num1");
-        sessionStorage.removeItem("num2");
-        sessionStorage.removeItem("operator");
-        display.textContent = `${roundSolution}`;
-        sessionStorage.setItem("num1", `${roundSolution}`);
-}
+        if (Number.isInteger(Number(solution)) === true) {
+            sessionStorage.removeItem("num1");
+            sessionStorage.removeItem("num2");
+            sessionStorage.removeItem("operator");
+            display.textContent = solution;
+            sessionStorage.setItem("num1", `${solution}`);
+        }
+        else if (Number.isInteger(Number(solution)) === false) {
+            let roundSolution = Number(solution).toFixed(2);
+            sessionStorage.removeItem("num1");
+            sessionStorage.removeItem("num2");
+            sessionStorage.removeItem("operator");
+            display.textContent = `${roundSolution}`;
+            sessionStorage.setItem("num1", `${roundSolution}`);
+        }
+    }
 }
 );
