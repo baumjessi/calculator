@@ -320,28 +320,24 @@ zero.addEventListener("click", (e) => {
 let plus = document.getElementById("plus");
 plus.addEventListener("click", (e) => {
     sessionStorage.setItem("operator", "+");
-    console.log(sessionStorage.getItem("operator"));
 }
 );
 
 let minus = document.getElementById("minus");
 minus.addEventListener("click", (e) => {
     sessionStorage.setItem("operator", "-");
-    console.log(sessionStorage.getItem("operator"));
 }
 );
 
 let times = document.getElementById("times");
 times.addEventListener("click", (e) => {
     sessionStorage.setItem("operator", "*");
-    console.log(sessionStorage.getItem("operator"));
 }
 );
 
 let divideSym = document.getElementById("divide");
 divideSym.addEventListener("click", (e) => {
     sessionStorage.setItem("operator", "/");
-    console.log(sessionStorage.getItem("operator"));
 }
 );
 
@@ -353,6 +349,21 @@ clear.addEventListener("click", (e) => {
     display.textContent = "";
 }
 );
+
+let backspace = document.getElementById("backspace");
+backspace.addEventListener("click", (e) =>{
+    let slicedNum;
+    if (sessionStorage.getItem("num2") === null) {
+        slicedNum = sessionStorage.getItem("num1").slice(0, -1);
+        sessionStorage.setItem("num1", slicedNum);
+        display.textContent = sessionStorage.getItem("num1");
+        }
+    else if (sessionStorage.getItem("num2") !== null) {
+        slicedNum = sessionStorage.getItem("num2").slice(0, -1);
+        sessionStorage.setItem("num2", slicedNum);
+        display.textContent = sessionStorage.getItem("num2");
+    }
+    });
 
 let equal = document.getElementById("equal");
 equal.addEventListener("click", (e) => {
