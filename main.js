@@ -365,6 +365,42 @@ backspace.addEventListener("click", (e) =>{
     }
     });
 
+let integer = document.getElementById("integer");
+integer.addEventListener("click", (e) => {
+    let negative = "-";
+    let newNum;
+    if (sessionStorage.getItem("num1") === null) {
+        sessionStorage.setItem("num1", "-");
+        display.textContent = sessionStorage.getItem("num1");
+        console.log(typeof(sessionStorage.getItem("num1")));
+    }
+    if (sessionStorage.getItem("num2") !==null) {
+        if (sessionStorage.getItem("num1").includes("-")) {
+            newNum = sessionStorage.getItem("num1").replace("-", "");
+            sessionStorage.setItem("num1", newNum);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else if (!(sessionStorage.getItem("num1").includes("-"))) {
+            newNum = negative + sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", newNum);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+    }
+    
+    else if (sessionStorage.getItem("num2") !== null) {
+         if (sessionStorage.getItem("num2").includes("-")) {
+            newNum = sessionStorage.getItem("num2").replace("-", "");
+            sessionStorage.setItem("num2", newNum);
+            display.textContent = sessionStorage.getItem("num2");
+        }
+        else if (!(sessionStorage.getItem("num2").includes("-"))) {
+            newNum = negative + sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", newNum);
+            display.textContent = sessionStorage.getItem("num2");
+        }
+    }
+});
+
 let equal = document.getElementById("equal");
 equal.addEventListener("click", (e) => {
     if (sessionStorage.getItem("num2") === null) {
