@@ -401,6 +401,34 @@ integer.addEventListener("click", (e) => {
     }
 });
 
+let square = document.getElementById("square");
+square.addEventListener("click", (e) =>{
+    if (sessionStorage.getItem("num1") === null &&
+    sessionStorage.getItem("num2") === null) {
+        square.disabled = true;
+        }
+    else if (sessionStorage.getItem("num1") !==null &&
+    sessionStorage.getItem("num2") !== null) {
+        square.disabled = true;
+        }
+    else if (sessionStorage.getItem("num1") !==null &&
+    sessionStorage.getItem("num2") === null) {
+        square.disabled = false;
+        let solution = Math.sqrt(sessionStorage.getItem("num1"));
+        sessionStorage.setItem("num1", solution);
+        display.textContent = solution;
+    }
+    else if (sessionStorage.getItem("num1") !== null &&
+    sessionStorage.getItem("num2").length === 0) {
+        square.disabled = false;
+        sessionStorage.removeItem("num2");
+        sessionStorage.removeItem("operator");
+        let solution = Math.sqrt(sessionStorage.getItem("num1"));
+        sessionStorage.setItem("num1", solution);
+        display.textContent = solution;
+    }
+});
+
 let equal = document.getElementById("equal");
 equal.addEventListener("click", (e) => {
     if (sessionStorage.getItem("num2") === null) {
