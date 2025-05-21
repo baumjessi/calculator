@@ -427,7 +427,45 @@ square.addEventListener("click", (e) =>{
         sessionStorage.setItem("num1", solution);
         display.textContent = solution;
     }
+    // need to fix bug for button being disabled after hitting clear on 2 variables without using equal 
 });
+
+let decimal = document.getElementById("decimal");
+decimal.addEventListener("click", (e) => {
+    if (sessionStorage.getItem("num2") === null &&
+    sessionStorage.getItem("num1").includes(".")) {
+        decimal.disabled;
+    }
+    else if (sessionStorage.getItem("num2") === null &&
+    !(sessionStorage.getItem("num1").includes("."))) {
+        decimal.enabled;
+        let floatNum1 = sessionStorage.getItem("num1") + ".";
+        sessionStorage.setItem("num1", floatNum1);
+        display.textContent = sessionStorage.getItem("num1");
+    }
+    else if (sessionStorage.getItem("num2") === null &&
+    sessionStorage.getItem("num1") === null) {
+        sessionStorage.setItem("num1", "0.");
+        display.textContent = sessionStorage.getItem("num1");
+    }
+    else if (sessionStorage.getItem("num2") !== null &&
+    sessionStorage.getItem("num2").includes(".")) {
+        decimal.disabled;
+    }
+    else if (sessionStorage.getItem("num2") !==null &&
+    !(sessionStorage.getItem("num2").includes("."))) {
+        decimal.enabled;
+        let floatNum2 = sessionStorage.getItem("num2") + ".";
+        sessionStorage.setItem("num2", floatNum2);
+        display.textContent = sessionStorage.getItem("num2");
+    }
+    else if (sessionStorage.getItem("num2") === null &&
+    sessionStorage.getItem("num1") !== null) {
+        sessionStorage.setItem("num2", "0.");
+        display.textContent = sessionStorage.getItem("num2");
+    } 
+}
+)
 
 let equal = document.getElementById("equal");
 equal.addEventListener("click", (e) => {
