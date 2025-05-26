@@ -1,7 +1,7 @@
-Calculator
+# Calculator
 By Jessi B.
 
-How to use this calculator
+## How to use this calculator
 
 Click here to start calculating! 
 
@@ -11,19 +11,22 @@ backspace button to clear individual digits from variables, or you can use the "
 
 Here are the keyboard controls:
 
-Digits 0-9: the numbers along the top of your keyboard
-Plus: The "+" & "=" key
+Digits 0-9: the corresponding digit key
+Plus: Shift + "="
 Minus: the "-" key
 Decimal: the "." key
 Equal: the Enter key
 Square: the Tab key
-Multiply: the "x" key
+Multiply: Shift + "8"
 Divide: the "/" key
+Inverse: the "i" key
 
-Acknowledgments 
-The backspace button is from Google Fonts. 
+The numeric keypad also works! 
 
-Found a bug? 
+## Acknowledgments 
+The backspace button is from [Google Fonts](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:backspace:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=backsp&icon.size=24&icon.color=%234d4d4d). 
+
+## Found a bug? 
 This calculator is an assignment from the Odin Project.
 
 Email me at hellojessib@outlook.com or message me on Discord (@jssi.b) with any questions or bugs.

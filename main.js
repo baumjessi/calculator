@@ -633,6 +633,18 @@ minus.addEventListener("click", (e) => {
 }
 );
 
+document.addEventListener("keydown", (e) => {
+    if (e.key == "-") {
+    if (sessionStorage.getItem("num1") === null) {
+        minus.disabled;
+    }
+    else {
+        minus.enabled;
+        sessionStorage.setItem("operator", "-");
+    }
+    }
+});
+
 let times = document.getElementById("times");
 times.addEventListener("click", (e) => {
     if (sessionStorage.getItem("num1") === null) {
@@ -645,6 +657,18 @@ times.addEventListener("click", (e) => {
 }
 );
 
+document.addEventListener("keydown", (e) => {
+    if (e.key == "*") {
+        if (sessionStorage.getItem("num1") === null) {
+        times.disabled;
+    }
+    else {
+        times.enabled;
+        sessionStorage.setItem("operator", "*");
+    }
+    }
+});
+
 let divideSym = document.getElementById("divide");
 divideSym.addEventListener("click", (e) => {
     if (sessionStorage.getItem("num1") === null) {
@@ -652,10 +676,22 @@ divideSym.addEventListener("click", (e) => {
     }
     else {
         divideSym.enabled;
-    sessionStorage.setItem("operator", "/");
+        sessionStorage.setItem("operator", "/");
     }
 }
 );
+
+document.addEventListener("keydown", (e) => {
+    if (e.key == "/") {
+         if (sessionStorage.getItem("num1") === null) {
+        divideSym.disabled;
+    }
+    else {
+        divideSym.enabled;
+        sessionStorage.setItem("operator", "/");
+    }
+    }
+});
 
 let clear = document.getElementById("clear");
 clear.addEventListener("click", (e) => {
@@ -665,6 +701,15 @@ clear.addEventListener("click", (e) => {
     display.textContent = "";
 }
 );
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Delete") {
+        sessionStorage.removeItem("num1");
+        sessionStorage.removeItem("num2");
+        sessionStorage.removeItem("operator");
+        display.textContent = "";
+    }
+});
 
 let backspace = document.getElementById("backspace");
 backspace.addEventListener("click", (e) =>{
@@ -680,6 +725,22 @@ backspace.addEventListener("click", (e) =>{
         display.textContent = sessionStorage.getItem("num2");
     }
     });
+
+document.addEventListener ("keydown", (e) => {
+    if (e.key === "Backspace") {
+        let slicedNum;
+    if (sessionStorage.getItem("num2") === null) {
+        slicedNum = sessionStorage.getItem("num1").slice(0, -1);
+        sessionStorage.setItem("num1", slicedNum);
+        display.textContent = sessionStorage.getItem("num1");
+        }
+    else if (sessionStorage.getItem("num2") !== null) {
+        slicedNum = sessionStorage.getItem("num2").slice(0, -1);
+        sessionStorage.setItem("num2", slicedNum);
+        display.textContent = sessionStorage.getItem("num2");
+    }
+    }
+});
 
 let integer = document.getElementById("integer");
 integer.addEventListener("click", (e) => {
