@@ -12,14 +12,14 @@ backspace button to clear individual digits from variables, or you can use the "
 Here are the keyboard controls:
 
 Digits 0-9: the corresponding digit key
-Plus: Shift + "="
-Minus: the "-" key
-Decimal: the "." key
-Equal: the Enter key
-Square: the Tab key
-Multiply: Shift + "8"
-Divide: the "/" key
-Inverse: the "i" key
+Plus: Shift + "="  
+Minus: the "-" key  
+Decimal: the "." key  
+Equal: the Enter key  
+Square: the Tab key  
+Multiply: Shift + "8"  
+Divide: the "/" key  
+Inverse: the "i" key  
 
 The numeric keypad also works! 
 
