@@ -319,25 +319,49 @@ zero.addEventListener("click", (e) => {
 
 let plus = document.getElementById("plus");
 plus.addEventListener("click", (e) => {
-    sessionStorage.setItem("operator", "+");
+    if (sessionStorage.getItem("num1") === null) {
+        plus.disabled;
+    }
+    else {
+        plus.enabled;
+        sessionStorage.setItem("operator", "+");
+    }
 }
 );
 
 let minus = document.getElementById("minus");
 minus.addEventListener("click", (e) => {
-    sessionStorage.setItem("operator", "-");
+    if (sessionStorage.getItem("num1") === null) {
+        minus.disabled;
+    }
+    else {
+        minus.enabled;
+        sessionStorage.setItem("operator", "-");
+    }
 }
 );
 
 let times = document.getElementById("times");
 times.addEventListener("click", (e) => {
-    sessionStorage.setItem("operator", "*");
+    if (sessionStorage.getItem("num1") === null) {
+        times.disabled;
+    }
+    else {
+        times.enabled;
+        sessionStorage.setItem("operator", "*");
+    }
 }
 );
 
 let divideSym = document.getElementById("divide");
 divideSym.addEventListener("click", (e) => {
+    if (sessionStorage.getItem("num1") === null) {
+        divideSym.disabled;
+    }
+    else {
+        divideSym.enabled;
     sessionStorage.setItem("operator", "/");
+    }
 }
 );
 
@@ -369,16 +393,19 @@ let integer = document.getElementById("integer");
 integer.addEventListener("click", (e) => {
     let negative = "-";
     let newNum;
-    if (sessionStorage.getItem("num1") === null) {
+    if (sessionStorage.getItem("num1") === null &&
+        sessionStorage.getItem("operator") === null &&
+        sessionStorage.getItem("num2") === null) {
         sessionStorage.setItem("num1", "-");
         display.textContent = sessionStorage.getItem("num1");
-        console.log(typeof(sessionStorage.getItem("num1")));
     }
-    if (sessionStorage.getItem("num2") !==null) {
+    else if (sessionStorage.getItem("num1") !== null &&
+        sessionStorage.getItem("operator") === null &&
+        sessionStorage.getItem("num2") === null) {
         if (sessionStorage.getItem("num1").includes("-")) {
-            newNum = sessionStorage.getItem("num1").replace("-", "");
-            sessionStorage.setItem("num1", newNum);
-            display.textContent = sessionStorage.getItem("num1");
+        newNum = sessionStorage.getItem("num1").replace("-", "");
+        sessionStorage.setItem("num1", newNum);
+        display.textContent = sessionStorage.getItem("num1");
         }
         else if (!(sessionStorage.getItem("num1").includes("-"))) {
             newNum = negative + sessionStorage.getItem("num1");
@@ -386,9 +413,10 @@ integer.addEventListener("click", (e) => {
             display.textContent = sessionStorage.getItem("num1");
         }
     }
-    
-    else if (sessionStorage.getItem("num2") !== null) {
-         if (sessionStorage.getItem("num2").includes("-")) {
+    else if (sessionStorage.getItem("num2") !==null && 
+        sessionStorage.getItem("num1") !== null &&
+        sessionStorage.getItem("operator") !==null) {
+        if (sessionStorage.getItem("num2").includes("-")) {
             newNum = sessionStorage.getItem("num2").replace("-", "");
             sessionStorage.setItem("num2", newNum);
             display.textContent = sessionStorage.getItem("num2");
@@ -399,6 +427,12 @@ integer.addEventListener("click", (e) => {
             display.textContent = sessionStorage.getItem("num2");
         }
     }
+    else if (sessionStorage.getItem("num1") !==null &&
+        sessionStorage.getItem("operator") !== null &&
+        sessionStorage.getItem("num2") === null) {
+            sessionStorage.setItem("num2", "-");
+            display.textContent = sessionStorage.getItem("num2");
+        }
 });
 
 let square = document.getElementById("square");
@@ -427,12 +461,17 @@ square.addEventListener("click", (e) =>{
         sessionStorage.setItem("num1", solution);
         display.textContent = solution;
     }
-    // need to fix bug for button being disabled after hitting clear on 2 variables without using equal 
 });
 
 let decimal = document.getElementById("decimal");
 decimal.addEventListener("click", (e) => {
-    if (sessionStorage.getItem("num2") === null &&
+    if (sessionStorage.getItem("num1") === null &&
+    sessionStorage.getItem("num2") === null) {
+        sessionStorage.setItem("num1", "0.");
+        display.textContent = sessionStorage.getItem("num1");
+    }
+    else if (sessionStorage.getItem("num2") === null &&
+    sessionStorage.getItem("operator") === null &&
     sessionStorage.getItem("num1").includes(".")) {
         decimal.disabled;
     }
@@ -443,11 +482,14 @@ decimal.addEventListener("click", (e) => {
         sessionStorage.setItem("num1", floatNum1);
         display.textContent = sessionStorage.getItem("num1");
     }
-    else if (sessionStorage.getItem("num2") === null &&
-    sessionStorage.getItem("num1") === null) {
-        sessionStorage.setItem("num1", "0.");
-        display.textContent = sessionStorage.getItem("num1");
+    else if (sessionStorage.getItem("num1") !== null &&
+    sessionStorage.getItem("operator") !== null &&
+    sessionStorage.getItem("num2") === null) {
+        decimal.enabled;
+        sessionStorage.setItem("num2", "0.");
+        display.textContent = sessionStorage.getItem("num2");
     }
+
     else if (sessionStorage.getItem("num2") !== null &&
     sessionStorage.getItem("num2").includes(".")) {
         decimal.disabled;
@@ -459,11 +501,6 @@ decimal.addEventListener("click", (e) => {
         sessionStorage.setItem("num2", floatNum2);
         display.textContent = sessionStorage.getItem("num2");
     }
-    else if (sessionStorage.getItem("num2") === null &&
-    sessionStorage.getItem("num1") !== null) {
-        sessionStorage.setItem("num2", "0.");
-        display.textContent = sessionStorage.getItem("num2");
-    } 
 }
 )
 
