@@ -81,49 +81,33 @@ html {
     font-size: 20px;
     border-radius: 30px;
     margin: 5px;
+    color: #4d4d4d;
 }
 
 .num-blue {
     background-color: #edf3ff;
-    color: #4d4d4d;
 }
 
-.num-blue:hover {
+.num-blue:hover,
+.num-pink:hover,
+.num-purple:hover,
+.num-green:hover,
+.num-orange:hover {
     background-color: #f2f5f7;
 }
 
 .num-pink {
     background-color: #ffdaff;
-    color: #4d4d4d;
-}
-
-.num-pink:hover {
-    background-color: #f2f5f7;
 }
 
 .num-purple {
     background-color: #e7c7ff;
-    color: #4d4d4d;
-}
-
-.num-purple:hover {
-    background-color: #f2f5f7;
 }
 
 .num-green {
     background-color: #d3fed8;
-    color: #4d4d4d;
-}
-
-.num-green:hover {
-    background-color: #f2f5f7;
 }
 
 .num-orange {
     background-color: #ffe7cd;
-    color: #4d4d4d;
-}
-
-.num-orange:hover {
-    background-color: #f2f5f7;
 }
