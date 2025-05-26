@@ -9,17 +9,17 @@ This simple and cute calculator can evaluate two-variable math problems using ad
 find the square root of a variable. It can evaluate problems with both positive negative numbers and both integers and floats. You can use the 
 backspace button to clear individual digits from variables, or you can use the "clear" button to wipe the entire equation. To enter the variables and operator for your math problem, you can use either the on-screen keys or your computer's keyboard.
 
-Here are the keyboard controls:
+### Keyboard Controls:
 
-Digits 0-9: the corresponding digit key
-Plus: Shift + "="  
-Minus: the "-" key  
-Decimal: the "." key  
-Equal: the Enter key  
-Square: the Tab key  
-Multiply: Shift + "8"  
-Divide: the "/" key  
-Inverse: the "i" key  
+- **Digits 0-9:** the corresponding digit key  
+- **Plus:** Shift + "="  
+- **Minus:** the "-" key  
+- **Decimal:** the "." key  
+- **Equal:** the Enter key  
+- **Square:** the Tab key  
+- **Multiply:** Shift + "8"  
+- **Divide:** the "/" key  
+- **Inverse:** the "i" key  
 
 The numeric keypad also works! 
 
