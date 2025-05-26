@@ -67,6 +67,35 @@ one.addEventListener("click", (e) => {
     }
 );
 
+document.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("1")) {
+        if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "1");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}1`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "1");
+            display.textContent = sessionStorage.getItem("num2");
+
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}1`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
+    }
+);
+
 let two = document.getElementById("two");
 two.addEventListener("click", (e) => {
  if (sessionStorage.getItem("operator")===null) {
@@ -94,6 +123,33 @@ two.addEventListener("click", (e) => {
     };
 });
 
+document.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("2")) {
+        if (sessionStorage.getItem("operator")===null) {
+            if (sessionStorage.getItem("num1")===null) {
+             sessionStorage.setItem("num1", "2");
+                display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}2`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        }
+        else if (sessionStorage.getItem("operator") !== null 
+        && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "2");
+            display.textContent = sessionStorage.getItem("num2");
+
+        }
+        else if (sessionStorage.getItem("operator") !== null 
+        && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}2`);
+            display.textContent = sessionStorage.getItem("num2");
+    }}
+});
+
 let three = document.getElementById("three");
 three.addEventListener("click", (e) => {
  if (sessionStorage.getItem("operator")===null) {
@@ -118,6 +174,35 @@ three.addEventListener("click", (e) => {
             num2temp = sessionStorage.getItem("num2");
             sessionStorage.setItem("num2", `${num2temp}3`);
             display.textContent = sessionStorage.getItem("num2");
+    }
+    }
+);
+
+document.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("3")) {
+        if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "3");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}3`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        }
+        else if (sessionStorage.getItem("operator") !== null 
+        && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "3");
+            display.textContent = sessionStorage.getItem("num2");
+
+        }
+        else if (sessionStorage.getItem("operator") !== null 
+        && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}3`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
     }
     }
 );
@@ -150,6 +235,35 @@ four.addEventListener("click", (e) => {
     }
 );
 
+document.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("4")) {
+        if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "4");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}4`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "4");
+            display.textContent = sessionStorage.getItem("num2");
+
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}4`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
+    }
+);
+
 let five = document.getElementById("five");
 five.addEventListener("click", (e) => {
  if (sessionStorage.getItem("operator")===null) {
@@ -178,6 +292,34 @@ five.addEventListener("click", (e) => {
     }
 );
 
+document.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("5")) {
+        if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "5");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}5`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "5");
+            display.textContent = sessionStorage.getItem("num2");
+
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}5`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
+});
+
 let six = document.getElementById("six");
 six.addEventListener("click", (e) => {
  if (sessionStorage.getItem("operator")===null) {
@@ -202,6 +344,34 @@ six.addEventListener("click", (e) => {
             num2temp = sessionStorage.getItem("num2");
             sessionStorage.setItem("num2", `${num2temp}6`);
             display.textContent = sessionStorage.getItem("num2");
+    }
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("6")) {
+         if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "6");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}6`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "6");
+            display.textContent = sessionStorage.getItem("num2");
+
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}6`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
     }
 });
 
@@ -233,6 +403,34 @@ seven.addEventListener("click", (e) => {
     }
 );
 
+document.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("7")) {
+        if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "7");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}7`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "7");
+            display.textContent = sessionStorage.getItem("num2");
+
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}7`);
+            display.textContent = sessionStorage.getItem("num2");
+    }  
+    }
+})
+
 let eight = document.getElementById("eight");
 eight.addEventListener("click", (e) => {
    if (sessionStorage.getItem("operator")===null) {
@@ -260,6 +458,32 @@ eight.addEventListener("click", (e) => {
     }
     }
 );
+
+document.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("8")) {
+        if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "8");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}8`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "8");
+            display.textContent = sessionStorage.getItem("num2");
+
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}8`);
+            display.textContent = sessionStorage.getItem("num2");
+    }}});
 
 let nine = document.getElementById("nine");
 nine.addEventListener("click", (e) => {
@@ -289,6 +513,34 @@ nine.addEventListener("click", (e) => {
     }
 );
 
+document.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("9")) {
+        if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "9");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}9`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "9");
+            display.textContent = sessionStorage.getItem("num2");
+
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}9`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
+});
+
 let zero = document.getElementById("zero");
 zero.addEventListener("click", (e) => {
    if (sessionStorage.getItem("operator")===null) {
@@ -317,6 +569,34 @@ zero.addEventListener("click", (e) => {
     }
 );
 
+document.addEventListener("keydown", (e) => {
+    if (e.key.startsWith("0")) {
+        if (sessionStorage.getItem("operator")===null) {
+        if (sessionStorage.getItem("num1")===null) {
+            sessionStorage.setItem("num1", "0");
+            display.textContent = sessionStorage.getItem("num1");
+        }
+        else {
+            num1temp = sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", `${num1temp}0`);
+            display.textContent = sessionStorage.getItem("num1");
+        }
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2")===null) {
+            sessionStorage.setItem("num2", "0");
+            display.textContent = sessionStorage.getItem("num2");
+
+    }
+    else if (sessionStorage.getItem("operator") !== null 
+    && sessionStorage.getItem("num2") !==null) {
+            num2temp = sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", `${num2temp}0`);
+            display.textContent = sessionStorage.getItem("num2");
+    }
+    }
+});
+
 let plus = document.getElementById("plus");
 plus.addEventListener("click", (e) => {
     if (sessionStorage.getItem("num1") === null) {
@@ -328,6 +608,18 @@ plus.addEventListener("click", (e) => {
     }
 }
 );
+
+document.addEventListener("keydown", (e) => {
+    if (e.key == "+") {
+         if (sessionStorage.getItem("num1") === null) {
+        plus.disabled;
+    }
+    else {
+        plus.enabled;
+        sessionStorage.setItem("operator", "+");
+    }
+    }
+});
 
 let minus = document.getElementById("minus");
 minus.addEventListener("click", (e) => {
