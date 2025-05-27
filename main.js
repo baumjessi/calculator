@@ -67,7 +67,7 @@ one.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("1")) {
+    if (e.key === "1") {
         if (sessionStorage.getItem("operator")===null) {
             if (sessionStorage.getItem("num1")===null) {
                 sessionStorage.setItem("num1", "1");
@@ -120,7 +120,7 @@ two.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("2")) {
+    if (e.key === "2") {
         if (sessionStorage.getItem("operator")===null) {
             if (sessionStorage.getItem("num1")===null) {
                 sessionStorage.setItem("num1", "2");
@@ -173,7 +173,7 @@ three.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("3")) {
+    if (e.key === "3") {
         if (sessionStorage.getItem("operator")===null) {
             if (sessionStorage.getItem("num1")===null) {
                 sessionStorage.setItem("num1", "3");
@@ -226,7 +226,7 @@ four.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("4")) {
+    if (e.key === "4") {
         if (sessionStorage.getItem("operator")===null) {
         if (sessionStorage.getItem("num1")===null) {
             sessionStorage.setItem("num1", "4");
@@ -281,7 +281,7 @@ five.addEventListener("click", (e) => {
 );
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("5")) {
+    if (e.key === "5") {
         if (sessionStorage.getItem("operator")===null) {
             if (sessionStorage.getItem("num1")===null) {
                 sessionStorage.setItem("num1", "5");
@@ -334,7 +334,7 @@ six.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("6")) {
+    if (e.key === "6") {
         if (sessionStorage.getItem("operator")===null) {
             if (sessionStorage.getItem("num1")===null) {
                 sessionStorage.setItem("num1", "6");
@@ -387,7 +387,7 @@ seven.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("7")) {
+    if (e.key === "7") {
         if (sessionStorage.getItem("operator")===null) {
             if (sessionStorage.getItem("num1")===null) {
                 sessionStorage.setItem("num1", "7");
@@ -440,7 +440,7 @@ eight.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("8")) {
+    if (e.key === "8") {
         if (sessionStorage.getItem("operator")===null) {
             if (sessionStorage.getItem("num1")===null) {
                 sessionStorage.setItem("num1", "8");
@@ -493,7 +493,7 @@ nine.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("9")) {
+    if (e.key === "9") {
         if (sessionStorage.getItem("operator")===null) {
             if (sessionStorage.getItem("num1")===null) {
                 sessionStorage.setItem("num1", "9");
@@ -546,7 +546,7 @@ zero.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("0")) {
+    if (e.key === "0") {
         if (sessionStorage.getItem("operator")===null) {
             if (sessionStorage.getItem("num1")===null) {
                 sessionStorage.setItem("num1", "0");
@@ -575,10 +575,10 @@ document.addEventListener("keydown", (e) => {
 let plus = document.getElementById("plus");
 plus.addEventListener("click", (e) => {
     if (sessionStorage.getItem("num1") === null) {
-        plus.disabled;
+        plus.disabled = true;
     }
     else {
-        plus.enabled;
+        plus.disabled = false;
         sessionStorage.setItem("operator", "+");
     }
 }
@@ -587,10 +587,10 @@ plus.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
     if (e.key == "+") {
         if (sessionStorage.getItem("num1") === null) {
-        plus.disabled;
+        plus.disabled = true;
     }
     else {
-        plus.enabled;
+        plus.disabled = false;
         sessionStorage.setItem("operator", "+");
     }
     }
@@ -599,10 +599,10 @@ document.addEventListener("keydown", (e) => {
 let minus = document.getElementById("minus");
 minus.addEventListener("click", (e) => {
     if (sessionStorage.getItem("num1") === null) {
-        minus.disabled;
+        minus.disabled = true;
     }
     else {
-        minus.enabled;
+        minus.disabled = false;
         sessionStorage.setItem("operator", "-");
     }
 }
@@ -611,10 +611,10 @@ minus.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
     if (e.key == "-") {
         if (sessionStorage.getItem("num1") === null) {
-            minus.disabled;
+            minus.disabled = true;
         }
         else {
-            minus.enabled;
+            minus.disabled = false;
             sessionStorage.setItem("operator", "-");
         }
     }
@@ -623,10 +623,10 @@ document.addEventListener("keydown", (e) => {
 let times = document.getElementById("times");
 times.addEventListener("click", (e) => {
     if (sessionStorage.getItem("num1") === null) {
-        times.disabled;
+        times.disabled = true;
     }
     else {
-        times.enabled;
+        times.disabled = false;
         sessionStorage.setItem("operator", "*");
     }
 }
@@ -635,10 +635,10 @@ times.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
     if (e.key == "*") {
         if (sessionStorage.getItem("num1") === null) {
-            times.disabled;
+            times.disabled = true;
         }
         else {
-            times.enabled;
+            times.disabled = false;
             sessionStorage.setItem("operator", "*");
         }
     }   
@@ -647,10 +647,10 @@ document.addEventListener("keydown", (e) => {
 let divideSym = document.getElementById("divide");
 divideSym.addEventListener("click", (e) => {
     if (sessionStorage.getItem("num1") === null) {
-        divideSym.disabled;
+        divideSym.disabled = true;
     }
     else {
-        divideSym.enabled;
+        divideSym.disabled = false;
         sessionStorage.setItem("operator", "/");
     }
 }
@@ -659,10 +659,10 @@ divideSym.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
     if (e.key == "/") {
         if (sessionStorage.getItem("num1") === null) {
-            divideSym.disabled;
+            divideSym.disabled = true;
         }
         else {
-            divideSym.enabled;
+            divideSym.enabled = false;
             sessionStorage.setItem("operator", "/");
         }
     }
@@ -690,32 +690,40 @@ let backspace = document.getElementById("backspace");
 backspace.addEventListener("click", (e) =>{
     let slicedNum;
     if (sessionStorage.getItem("num1") === null) {
-        backspace.disabled;
+        backspace.disabled = true;
     }
     else if (sessionStorage.getItem("num1") !== null &&
     sessionStorage.getItem("num2") === null) {
-        backspace.enabled;
+        backspace.disabled = false;
         slicedNum = sessionStorage.getItem("num1").slice(0, -1);
         sessionStorage.setItem("num1", slicedNum);
         display.textContent = sessionStorage.getItem("num1");
-        }
-    else if (sessionStorage.getItem("num2") !== null &&
-    sessionStorage.getItem("num1") === null) {
+    }
+    else if (sessionStorage.getItem("num1") !== null &&
+    sessionStorage.getItem("num2") !== null) {
+        backspace.disabled = false;
         slicedNum = sessionStorage.getItem("num2").slice(0, -1);
         sessionStorage.setItem("num2", slicedNum);
         display.textContent = sessionStorage.getItem("num2");
     }
-    });
+});
 
 document.addEventListener ("keydown", (e) => {
     if (e.key === "Backspace") {
         let slicedNum;
-        if (sessionStorage.getItem("num2") === null) {
+        if (sessionStorage.getItem("num1") === null) {
+            backspace.disabled = true;
+        }
+        else if (sessionStorage.getItem("num1") !== null &&
+        sessionStorage.getItem("num2") === null) {
+            backspace.disabled = false;
             slicedNum = sessionStorage.getItem("num1").slice(0, -1);
             sessionStorage.setItem("num1", slicedNum);
             display.textContent = sessionStorage.getItem("num1");
         }
-        else if (sessionStorage.getItem("num2") !== null) {
+        else if (sessionStorage.getItem("num1") !== null &&
+        sessionStorage.getItem("num2") !== null) {
+            backspace.disabled = false;
             slicedNum = sessionStorage.getItem("num2").slice(0, -1);
             sessionStorage.setItem("num2", slicedNum);
             display.textContent = sessionStorage.getItem("num2");
@@ -832,6 +840,7 @@ square.addEventListener("click", (e) =>{
         let solution = Math.sqrt(sessionStorage.getItem("num1"));
         sessionStorage.setItem("num1", solution);
         if (isNaN(solution)) {
+            sessionStorage.removeItem("num1");
             display.textContent = ":(";
         }
         else {
@@ -846,6 +855,7 @@ square.addEventListener("click", (e) =>{
         sessionStorage.removeItem("operator");
         let solution = Math.sqrt(sessionStorage.getItem("num1"));
         if (isNaN(solution)) {
+            sessionStorage.removeItem("num1");
             display.textContent = ":(";
         }
         else {
@@ -871,6 +881,7 @@ document.addEventListener("keydown", (e)=> {
             let solution = Math.sqrt(sessionStorage.getItem("num1"));
             sessionStorage.setItem("num1", solution);
             if (isNaN(solution)) {
+                sessionStorage.removeItem("num1");
                 display.textContent = ":(";
             }
             else {
@@ -885,6 +896,7 @@ document.addEventListener("keydown", (e)=> {
             sessionStorage.removeItem("operator");
             let solution = Math.sqrt(sessionStorage.getItem("num1"));
             if (isNaN(solution)) {
+                sessionStorage.removeItem("num1");
                 display.textContent = ":(";
             }
             else {
@@ -909,7 +921,7 @@ decimal.addEventListener("click", (e) => {
     }
     else if (sessionStorage.getItem("num2") === null &&
     !(sessionStorage.getItem("num1").includes("."))) {
-        decimal.enabled;
+        decimal.disabled = false;
         let floatNum1 = sessionStorage.getItem("num1") + ".";
         sessionStorage.setItem("num1", floatNum1);
         display.textContent = sessionStorage.getItem("num1");
@@ -917,17 +929,17 @@ decimal.addEventListener("click", (e) => {
     else if (sessionStorage.getItem("num1") !== null &&
     sessionStorage.getItem("operator") !== null &&
     sessionStorage.getItem("num2") === null) {
-        decimal.enabled;
+        decimal.disabled = false;
         sessionStorage.setItem("num2", "0.");
         display.textContent = sessionStorage.getItem("num2");
     }
     else if (sessionStorage.getItem("num2") !== null &&
     sessionStorage.getItem("num2").includes(".")) {
-        decimal.disabled;
+        decimal.disabled = true;
     }
     else if (sessionStorage.getItem("num2") !==null &&
     !(sessionStorage.getItem("num2").includes("."))) {
-        decimal.enabled;
+        decimal.disabled = false;
         let floatNum2 = sessionStorage.getItem("num2") + ".";
         sessionStorage.setItem("num2", floatNum2);
         display.textContent = sessionStorage.getItem("num2");
@@ -944,11 +956,11 @@ document.addEventListener("keydown", (e) => {
         else if (sessionStorage.getItem("num2") === null &&
         sessionStorage.getItem("operator") === null &&
         sessionStorage.getItem("num1").includes(".")) {
-            decimal.disabled;
+            decimal.disabled = true;
         }
         else if (sessionStorage.getItem("num2") === null &&
         !(sessionStorage.getItem("num1").includes("."))) {
-            decimal.enabled;
+            decimal.disabled = false;
             let floatNum1 = sessionStorage.getItem("num1") + ".";
             sessionStorage.setItem("num1", floatNum1);
             display.textContent = sessionStorage.getItem("num1");
@@ -956,18 +968,18 @@ document.addEventListener("keydown", (e) => {
         else if (sessionStorage.getItem("num1") !== null &&
         sessionStorage.getItem("operator") !== null &&
         sessionStorage.getItem("num2") === null) {
-            decimal.enabled;
+            decimal.disabled = false;
             sessionStorage.setItem("num2", "0.");
             display.textContent = sessionStorage.getItem("num2");
         }
 
         else if (sessionStorage.getItem("num2") !== null &&
         sessionStorage.getItem("num2").includes(".")) {
-            decimal.disabled;
+            decimal.disabled = true;
         }
         else if (sessionStorage.getItem("num2") !==null &&
         !(sessionStorage.getItem("num2").includes("."))) {
-            decimal.enabled;
+            decimal.disabled = false;
             let floatNum2 = sessionStorage.getItem("num2") + ".";
             sessionStorage.setItem("num2", floatNum2);
             display.textContent = sessionStorage.getItem("num2");
@@ -989,6 +1001,7 @@ equal.addEventListener("click", (e) => {
         sessionStorage.removeItem("num2");
         sessionStorage.removeItem("operator");
         if (solution === "Infinity" || solution === "NaN") {
+            sessionStorage.removeItem("num1");
             display.textContent = ":(";
         }
         else {
@@ -1014,6 +1027,7 @@ document.addEventListener("keydown", (e) => {
             sessionStorage.removeItem("num2");
             sessionStorage.removeItem("operator");
             if (solution === "Infinity" || solution === "NaN") {
+                sessionStorage.removeItem("num1");
                 display.textContent = ":(";
             }
             else {
