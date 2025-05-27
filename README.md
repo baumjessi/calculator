@@ -3,7 +3,7 @@ By Jessi B.
 
 ## How to use this calculator
 
-Click here to start calculating! 
+[Click here to start calculating!](https://baumjessi.github.io/calculator/) 
 
 This simple and cute calculator can evaluate two-variable math problems using addition, subtraction, multiplication, and division. It can also 
 find the square root of a variable. It can evaluate problems with both positive negative numbers and both integers and floats. You can use the 
