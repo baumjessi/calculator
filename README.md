@@ -6,7 +6,7 @@ By Jessi B.
 [Click here to start calculating!](https://baumjessi.github.io/calculator/) 
 
 This simple and cute calculator can evaluate two-variable math problems using addition, subtraction, multiplication, and division. It can also 
-find the square root of a variable. It can evaluate problems with both positive negative numbers and both integers and floats. You can use the 
+find the square root of a variable. It can evaluate problems with both positive and negative integers and floats. You can use the 
 backspace button to clear individual digits from variables, or you can use the "clear" button to wipe the entire equation. To enter the variables and operator for your math problem, you can use either the on-screen keys or your computer's keyboard.
 
 ### Keyboard Controls:
