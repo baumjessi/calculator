@@ -689,12 +689,18 @@ document.addEventListener("keydown", (e) => {
 let backspace = document.getElementById("backspace");
 backspace.addEventListener("click", (e) =>{
     let slicedNum;
-    if (sessionStorage.getItem("num2") === null) {
+    if (sessionStorage.getItem("num1") === null) {
+        backspace.disabled;
+    }
+    else if (sessionStorage.getItem("num1") !== null &&
+    sessionStorage.getItem("num2") === null) {
+        backspace.enabled;
         slicedNum = sessionStorage.getItem("num1").slice(0, -1);
         sessionStorage.setItem("num1", slicedNum);
         display.textContent = sessionStorage.getItem("num1");
         }
-    else if (sessionStorage.getItem("num2") !== null) {
+    else if (sessionStorage.getItem("num2") !== null &&
+    sessionStorage.getItem("num1") === null) {
         slicedNum = sessionStorage.getItem("num2").slice(0, -1);
         sessionStorage.setItem("num2", slicedNum);
         display.textContent = sessionStorage.getItem("num2");
@@ -764,49 +770,49 @@ inverse.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key.startsWith("i")) {
+    if (e.key === "i") {
         let negative = "-";
-        let newNum;
-        if (sessionStorage.getItem("num1") === null &&
-            sessionStorage.getItem("operator") === null &&
-            sessionStorage.getItem("num2") === null) {
-            sessionStorage.setItem("num1", "-");
+    let newNum;
+    if (sessionStorage.getItem("num1") === null &&
+        sessionStorage.getItem("operator") === null &&
+        sessionStorage.getItem("num2") === null) {
+        sessionStorage.setItem("num1", "-");
+        display.textContent = sessionStorage.getItem("num1");
+    }
+    else if (sessionStorage.getItem("num1") !== null &&
+        sessionStorage.getItem("operator") === null &&
+        sessionStorage.getItem("num2") === null) {
+        if (sessionStorage.getItem("num1").includes("-")) {f
+            newNum = sessionStorage.getItem("num1").replace("-", "");
+            sessionStorage.setItem("num1", newNum);
             display.textContent = sessionStorage.getItem("num1");
         }
-        else if (sessionStorage.getItem("num1") !== null &&
-            sessionStorage.getItem("operator") === null &&
-            sessionStorage.getItem("num2") === null) {
-            if (sessionStorage.getItem("num1").includes("-")) {
-                newNum = sessionStorage.getItem("num1").replace("-", "");
-                sessionStorage.setItem("num1", newNum);
-                display.textContent = sessionStorage.getItem("num1");
-            }
-            else if (!(sessionStorage.getItem("num1").includes("-"))) {
-                newNum = negative + sessionStorage.getItem("num1");
-                sessionStorage.setItem("num1", newNum);
-                display.textContent = sessionStorage.getItem("num1");
-            }
+        else if (!(sessionStorage.getItem("num1").includes("-"))) {
+            newNum = negative + sessionStorage.getItem("num1");
+            sessionStorage.setItem("num1", newNum);
+            display.textContent = sessionStorage.getItem("num1");
         }
-        else if (sessionStorage.getItem("num2") !==null && 
-            sessionStorage.getItem("num1") !== null &&
-            sessionStorage.getItem("operator") !==null) {
-            if (sessionStorage.getItem("num2").includes("-")) {
-                newNum = sessionStorage.getItem("num2").replace("-", "");
-                sessionStorage.setItem("num2", newNum);
-                display.textContent = sessionStorage.getItem("num2");
-            }
-            else if (!(sessionStorage.getItem("num2").includes("-"))) {
-                newNum = negative + sessionStorage.getItem("num2");
-                sessionStorage.setItem("num2", newNum);
-                display.textContent = sessionStorage.getItem("num2");
-            }
-        }
-        else if (sessionStorage.getItem("num1") !==null &&
-            sessionStorage.getItem("operator") !== null &&
-            sessionStorage.getItem("num2") === null) {
-            sessionStorage.setItem("num2", "-");
+    }
+    else if (sessionStorage.getItem("num2") !==null && 
+        sessionStorage.getItem("num1") !== null &&
+        sessionStorage.getItem("operator") !==null) {
+        if (sessionStorage.getItem("num2").includes("-")) {
+            newNum = sessionStorage.getItem("num2").replace("-", "");
+            sessionStorage.setItem("num2", newNum);
             display.textContent = sessionStorage.getItem("num2");
         }
+        else if (!(sessionStorage.getItem("num2").includes("-"))) {
+            newNum = negative + sessionStorage.getItem("num2");
+            sessionStorage.setItem("num2", newNum);
+            display.textContent = sessionStorage.getItem("num2");
+        }
+    }
+    else if (sessionStorage.getItem("num1") !==null &&
+        sessionStorage.getItem("operator") !== null &&
+        sessionStorage.getItem("num2") === null) {
+        sessionStorage.setItem("num2", "-");
+        display.textContent = sessionStorage.getItem("num2");
+    }
     }
 });
 
@@ -825,7 +831,13 @@ square.addEventListener("click", (e) =>{
         square.disabled = false;
         let solution = Math.sqrt(sessionStorage.getItem("num1"));
         sessionStorage.setItem("num1", solution);
-        display.textContent = solution;
+        if (isNaN(solution)) {
+            display.textContent = ":(";
+        }
+        else {
+            sessionStorage.setItem("num1", solution);
+            display.textContent = solution;
+        }
     }
     else if (sessionStorage.getItem("num1") !== null &&
     sessionStorage.getItem("num2").length === 0) {
@@ -833,8 +845,13 @@ square.addEventListener("click", (e) =>{
         sessionStorage.removeItem("num2");
         sessionStorage.removeItem("operator");
         let solution = Math.sqrt(sessionStorage.getItem("num1"));
-        sessionStorage.setItem("num1", solution);
-        display.textContent = solution;
+        if (isNaN(solution)) {
+            display.textContent = ":(";
+        }
+        else {
+            sessionStorage.setItem("num1", solution);
+            display.textContent = solution;
+        }
     }
 });
 
@@ -853,7 +870,13 @@ document.addEventListener("keydown", (e)=> {
             square.disabled = false;
             let solution = Math.sqrt(sessionStorage.getItem("num1"));
             sessionStorage.setItem("num1", solution);
-            display.textContent = solution;
+            if (isNaN(solution)) {
+                display.textContent = ":(";
+            }
+            else {
+                sessionStorage.setItem("num1", solution);
+                display.textContent = solution;
+            }
         }
         else if (sessionStorage.getItem("num1") !== null &&
         sessionStorage.getItem("num2").length === 0) {
@@ -861,8 +884,13 @@ document.addEventListener("keydown", (e)=> {
             sessionStorage.removeItem("num2");
             sessionStorage.removeItem("operator");
             let solution = Math.sqrt(sessionStorage.getItem("num1"));
-            sessionStorage.setItem("num1", solution);
-            display.textContent = solution;
+            if (isNaN(solution)) {
+                display.textContent = ":(";
+            }
+            else {
+                sessionStorage.setItem("num1", solution);
+                display.textContent = solution;
+            }
         }
     }
 });
@@ -960,8 +988,13 @@ equal.addEventListener("click", (e) => {
         sessionStorage.removeItem("num1");
         sessionStorage.removeItem("num2");
         sessionStorage.removeItem("operator");
-        display.textContent = `${solution}`;
-        sessionStorage.setItem("num1", `${solution}`);
+        if (solution === "Infinity" || solution === "NaN") {
+            display.textContent = ":(";
+        }
+        else {
+            display.textContent = `${solution}`;
+            sessionStorage.setItem("num1", `${solution}`);
+        }
     }
     else {
         equal.disabled = true;
@@ -973,7 +1006,6 @@ document.addEventListener("keydown", (e) => {
         if (sessionStorage.getItem("num2") !== null && 
         sessionStorage.getItem("num1") !== null &&
         sessionStorage.getItem("operator") !== null) {
-            equal.disabled = false;
             let num1 = Number(sessionStorage.getItem("num1"));
             let num2 = Number(sessionStorage.getItem("num2"));
             let operator = sessionStorage.getItem("operator");
@@ -981,11 +1013,13 @@ document.addEventListener("keydown", (e) => {
             sessionStorage.removeItem("num1");
             sessionStorage.removeItem("num2");
             sessionStorage.removeItem("operator");
-            display.textContent = `${solution}`;
-            sessionStorage.setItem("num1", `${solution}`);
+            if (solution === "Infinity" || solution === "NaN") {
+                display.textContent = ":(";
+            }
+            else {
+                display.textContent = `${solution}`;
+                sessionStorage.setItem("num1", `${solution}`);
         }
-        else {
-            equal.disabled = true;
         }
     }
 });
